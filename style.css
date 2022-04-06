@@ -114,7 +114,7 @@ html{
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 4px 14px rgba(5, 81, 81, 0.07);      
-    padding: 2rem;
+    padding: 1rem;
 }
 .header-main__brand a img{
     width: 10rem;
@@ -128,11 +128,85 @@ align-items: center;
     position: relative;
     padding: 1.7rem 0;
 } 
-.header-main__menu-list > ul > li a{
+.header-main__menu-list  ul  li a{
     font-size: 1.5rem;
     color: #001B24;
     position: relative;      
-    text-decoration: none;
+    text-decoration: none;      
+    transition: color 0.3s ease;       
+}
+.header-main__menu-list > ul > li:hover > a{
+    color: var(--blue-light);         
+}
+.header-main__menu-list > ul > li::after{
+    position: absolute;        
+    bottom: 3px;
+    left: 0;
+    right: 0px;      
+    margin: 0 auto;      
+    height: 0.3rem;
+    width: 30%;
+    content: '';
+    background-color: var(--blue-light);   
+    opacity: 0;
+    transition: all 0.3s ease;             
+}
+.header-main__menu-list > ul >li:hover::after{
+    opacity: 1;
+    visibility: visible;       
+    width: 80%;      
+}
+.header-main__menu-list > ul > li >ul li{
+    padding: 1rem;           
+    border-top: 1px solid #efefef;           
+    transition: all 0.3s ease;           
+    position: relative;           
+}
+.header-main__menu-list > ul > li > ul li:first-child {
+    border-top-color: transparent;       
+}
+.header-main__menu-list > ul > li > ul li:hover {
+    background-color: #efefef;            
+}  
+/* level 2 menu     */
+.header-main__menu-list > ul > li >ul  li  ul {
+    position: absolute;     
+    width: 25rem;     
+    right: 106%;     
+    background-color: #fff;     
+    top: 0;
+    border-radius: 0.4rem;     
+    padding: 1.4rem;     
+    box-shadow: 0 4px 14px rgba(5, 81, 81, 0.07);     
+    opacity: 0;     
+    visibility: hidden;     
+    transition: all 0.3s ease;     
+}
+.header-main__menu-list > ul > li >ul  li:hover  ul {
+    visibility: visible;      
+    opacity: 1;           
+}
+
+
+/* //////////////////////level 1 menu/////////////////// */
+.header-main__menu-list > ul >li > ul {
+    position: absolute;
+    right: 0;
+    top: 5.7rem;      
+    background-color: #fff;      
+    width: 25rem;     
+    padding: 1.4rem;     
+    border-radius: 0.4rem;     
+    box-shadow: 0 4px 14px rgba(5, 81, 81, 0.07);     
+    visibility: hidden;         
+    opacity: 0;       
+    transition: all 0.3s ease;                                    
+    transform: translateY(5rem);   
+}
+.header-main__menu-list >ul >li:hover > ul {
+    visibility: visible;     
+    opacity: 1;     
+    transform: translateY(0);      
 }
 /* ///////////////////header content //////////////////*/
 .header-main__content{
